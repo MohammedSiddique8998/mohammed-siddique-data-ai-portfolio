@@ -2,6 +2,10 @@
 
 Static interactive portfolio for Data Science, AI Engineering, Data Analytics, Business Analysis and AI Consulting opportunities.
 
+Live site: https://mohammed-siddique-data-ai-portfolio.vercel.app  
+GitHub profile: https://github.com/MohammedSiddique8998  
+Repository: https://github.com/MohammedSiddique8998/mohammed-siddique-data-ai-portfolio
+
 This project is intentionally built with plain HTML, CSS and JavaScript. It does not use React, Next.js, Tailwind CSS, Framer Motion, GSAP, Three.js or React Three Fiber. The 3D-style motion is created with native CSS transforms, a WebGL shader canvas, a Canvas 2D data-network background and vanilla JavaScript interactions.
 
 ## Tech Stack
@@ -40,7 +44,7 @@ portfolio-site/
 - Filterable project cards with case-study modals
 - PDF and DOCX CV download links
 - Contact section with email, phone, LinkedIn and FormSubmit form
-- Floating "Hi" enquiry widget that opens a pre-filled email draft
+- Floating guided enquiry assistant that opens a pre-filled email draft
 - Footer with made-by credit, privacy, terms and conditions modals
 
 ## Contact Delivery

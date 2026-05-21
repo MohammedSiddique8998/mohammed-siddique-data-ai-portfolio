@@ -1022,13 +1022,26 @@ h3 {
   margin-top: 20px;
 }
 
-.card-actions button {
+.card-actions button,
+.card-actions a {
   flex: 1;
   min-height: 42px;
   border: 1px solid var(--line);
   border-radius: 6px;
   color: var(--text);
   background: color-mix(in srgb, var(--panel-strong) 80%, transparent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.card-actions .is-disabled {
+  color: var(--muted);
+  cursor: not-allowed;
+  opacity: 0.74;
 }
 
 .resume-panel {
@@ -1063,10 +1076,24 @@ h3 {
 }
 
 .contact-card p,
-.contact-form small {
+.contact-form small,
+.form-feedback {
   margin: 8px 0 0;
   color: var(--muted);
   line-height: 1.55;
+}
+
+.form-feedback {
+  min-height: 1.25em;
+  font-weight: 700;
+}
+
+.form-feedback.is-error {
+  color: var(--danger);
+}
+
+.form-feedback.is-ready {
+  color: var(--a);
 }
 
 .contact-form {
@@ -1140,14 +1167,42 @@ h3 {
   line-height: 1.5;
 }
 
-.chat-panel label {
+.chat-panel label,
+.chat-panel fieldset {
   display: grid;
   gap: 8px;
   color: var(--muted);
 }
 
+.chat-panel fieldset {
+  margin: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.chat-panel legend {
+  padding: 0 6px;
+  color: var(--text);
+  font-weight: 800;
+}
+
+.chat-panel fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 28px;
+  color: var(--muted);
+}
+
+.chat-panel input[type="radio"] {
+  width: auto;
+  accent-color: var(--a);
+}
+
 .chat-panel input,
-.chat-panel textarea {
+.chat-panel textarea,
+.chat-panel select {
   width: 100%;
   border: 1px solid var(--line);
   border-radius: 6px;
@@ -1155,6 +1210,10 @@ h3 {
   color: var(--text);
   background: color-mix(in srgb, var(--bg) 72%, transparent);
   resize: vertical;
+}
+
+.chat-panel select {
+  resize: none;
 }
 
 @keyframes chatIn {
@@ -1540,5 +1599,16 @@ body.is-replaying main {
   .footer {
     display: grid;
     padding-bottom: 118px;
+  }
+
+  .chat-concierge {
+    right: 12px;
+    bottom: 12px;
+    width: min(360px, calc(100% - 24px));
+  }
+
+  .chat-panel {
+    max-height: min(78vh, 680px);
+    overflow: auto;
   }
 }

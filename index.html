@@ -21,7 +21,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=15" />
+    <link rel="stylesheet" href="./styles.css?v=17" />
   </head>
   <body>
     <div class="loading-screen" id="loader" aria-hidden="true">
@@ -313,6 +313,9 @@
             <a href="mailto:siddique.infra08091998@gmail.com">siddique.infra08091998@gmail.com</a>
             <a href="tel:+447464139684">+44 7464 139684</a>
             <a href="https://www.linkedin.com/in/mohammedsiddique-ds" target="_blank" rel="noreferrer">LinkedIn profile</a>
+            <a href="https://mohammed-siddique-data-ai-portfolio.vercel.app" target="_blank" rel="noreferrer">Live portfolio</a>
+            <a href="https://github.com/MohammedSiddique8998" target="_blank" rel="noreferrer">GitHub profile</a>
+            <a href="https://github.com/MohammedSiddique8998/mohammed-siddique-data-ai-portfolio" target="_blank" rel="noreferrer">Portfolio source repo</a>
             <p>
               Prefer direct email? The contact form is prepared for secure email delivery, and the mail link above is
               the reliable fallback.
@@ -323,6 +326,7 @@
             id="contactForm"
             action="https://formsubmit.co/siddique.infra08091998@gmail.com"
             method="POST"
+            novalidate
           >
             <input type="hidden" name="_subject" value="Portfolio enquiry for Mohammed Siddique" />
             <input type="hidden" name="_template" value="table" />
@@ -340,7 +344,9 @@
               <textarea name="message" rows="4" required></textarea>
             </label>
             <button class="button primary" type="submit">Send to Gmail</button>
+            <p class="form-feedback" id="contactFeedback" aria-live="polite"></p>
             <small>
+              Press Enter to send. Use Shift+Enter inside the message box for a new line.
               First live FormSubmit message may require one-time Gmail activation. After activation, messages are sent
               directly to the listed inbox.
             </small>
@@ -353,28 +359,39 @@
       <button class="chat-toggle" id="chatToggle" type="button" aria-expanded="false">
         Hi
       </button>
-      <form
-        class="chat-panel"
-        id="chatForm"
-        action="mailto:siddique.infra08091998@gmail.com"
-        method="POST"
-        enctype="text/plain"
-      >
-        <input type="hidden" name="_subject" value="Portfolio chatbot enquiry for Mohammed Siddique" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="false" />
-        <h3>AI Portfolio Concierge</h3>
-        <p>Send a quick enquiry about data, AI, analytics or internship opportunities.</p>
+      <form class="chat-panel" id="chatForm" action="mailto:siddique.infra08091998@gmail.com" method="POST" enctype="text/plain" novalidate>
+        <h3>Guided Enquiry Assistant</h3>
+        <p>A smart guided form that prepares a clear email to Mohammed. No AI backend or message storage is used.</p>
+        <fieldset>
+          <legend>What are you looking for?</legend>
+          <label><input type="radio" name="role" value="Data Analyst role" required /> Data Analyst role</label>
+          <label><input type="radio" name="role" value="Data Scientist role" /> Data Scientist role</label>
+          <label><input type="radio" name="role" value="AI/ML Engineer role" /> AI/ML Engineer role</label>
+          <label><input type="radio" name="role" value="Business Analyst role" /> Business Analyst role</label>
+          <label><input type="radio" name="role" value="AI Consultant role" /> AI Consultant role</label>
+          <label><input type="radio" name="role" value="Collaboration/project enquiry" /> Collaboration/project enquiry</label>
+        </fieldset>
+        <label>
+          How soon do you need a response?
+          <select name="responseTime" required>
+            <option value="">Select timing</option>
+            <option>Today / urgent</option>
+            <option>Within 2-3 days</option>
+            <option>This week</option>
+            <option>Flexible</option>
+          </select>
+        </label>
         <label>
           Your email
-          <input name="email" type="email" autocomplete="email" required />
+          <input name="email" type="email" autocomplete="email" required placeholder="name@example.com" />
         </label>
         <label>
-          Message
-          <textarea name="message" rows="3" required>I would like to connect regarding a data/AI opportunity.</textarea>
+          Short message
+          <textarea name="message" rows="3" required placeholder="Briefly share the role, company, project, or next step."></textarea>
         </label>
-        <button class="button primary" type="submit">Send to Gmail</button>
-        <small>Opens a pre-filled email to Mohammed's Gmail instantly.</small>
+        <button class="button primary" type="submit">Prepare Email</button>
+        <p class="form-feedback" id="chatFeedback" aria-live="polite"></p>
+        <small>Mohammed usually responds as soon as possible via the email you provide.</small>
       </form>
     </aside>
 
@@ -417,6 +434,6 @@
       <a href="#top">Back to top</a>
     </footer>
 
-    <script src="./app.js?v=15" defer></script>
+    <script src="./app.js?v=17" defer></script>
   </body>
 </html>

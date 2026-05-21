@@ -379,6 +379,11 @@ function renderProjects(filter = "all") {
         </div>
         <div class="card-actions">
           <button type="button" data-project="${projects.indexOf(project)}">Open case study</button>
+          ${
+            project.repoUrl
+              ? `<a href="${project.repoUrl}" target="_blank" rel="noreferrer">GitHub</a>`
+              : `<button type="button" class="is-disabled" disabled>GitHub coming soon</button>`
+          }
         </div>
       `;
       grid.append(card);
@@ -465,18 +470,110 @@ document.querySelector("#emailProjectBrief")?.addEventListener("click", () => {
   window.location.href = `mailto:siddique.infra08091998@gmail.com?subject=${subject}&body=${body}`;
 });
 
+const contactForm = document.querySelector("#contactForm");
+const contactFeedback = document.querySelector("#contactFeedback");
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if (contactForm) {
+  contactForm.noValidate = true;
+  contactForm.setAttribute("novalidate", "");
+}
+
+function setFeedback(element, message, type = "error") {
+  if (!element) return;
+  element.textContent = message;
+  element.classList.toggle("is-error", type === "error");
+  element.classList.toggle("is-ready", type === "ready");
+}
+
+function validateContactForm(form, feedbackElement) {
+  const name = form.elements.name?.value.trim();
+  const email = form.elements.email?.value.trim();
+  const message = form.elements.message?.value.trim();
+
+  if (!name || name.length < 2) {
+    setFeedback(feedbackElement, "Please enter your name before sending.");
+    form.elements.name?.focus();
+    return false;
+  }
+  if (!emailPattern.test(email || "")) {
+    setFeedback(feedbackElement, "Please enter a valid email address.");
+    form.elements.email?.focus();
+    return false;
+  }
+  if (!message || message.length < 10) {
+    setFeedback(feedbackElement, "Please add a short message with at least 10 characters.");
+    form.elements.message?.focus();
+    return false;
+  }
+  setFeedback(feedbackElement, "Ready to send.", "ready");
+  return true;
+}
+
+function submitFormFromKeyboard(form) {
+  if (typeof form.requestSubmit === "function") {
+    form.requestSubmit();
+    return;
+  }
+  form.querySelector('button[type="submit"]')?.click();
+}
+
+contactForm?.addEventListener("keydown", (event) => {
+  if (event.key !== "Enter") return;
+  const isMessageBox = event.target.matches("textarea");
+  if (isMessageBox && event.shiftKey) return;
+  event.preventDefault();
+  submitFormFromKeyboard(contactForm);
+});
+
+contactForm?.addEventListener("submit", (event) => {
+  if (!validateContactForm(event.currentTarget, contactFeedback)) {
+    event.preventDefault();
+  }
+});
+
 document.querySelector("#chatToggle")?.addEventListener("click", (event) => {
   const panel = document.querySelector("#chatConcierge");
   panel.classList.toggle("open");
   event.currentTarget.setAttribute("aria-expanded", String(panel.classList.contains("open")));
 });
 
-document.querySelector("#chatForm")?.addEventListener("submit", (event) => {
+const chatForm = document.querySelector("#chatForm");
+if (chatForm) {
+  chatForm.noValidate = true;
+  chatForm.setAttribute("novalidate", "");
+}
+
+chatForm?.addEventListener("submit", (event) => {
   event.preventDefault();
   const form = new FormData(event.currentTarget);
-  const subject = encodeURIComponent("Portfolio enquiry from chatbot");
+  const feedback = document.querySelector("#chatFeedback");
+  const role = form.get("role");
+  const responseTime = form.get("responseTime");
+  const email = String(form.get("email") || "").trim();
+  const message = String(form.get("message") || "").trim();
+
+  if (!role) {
+    setFeedback(feedback, "Please choose the type of enquiry.");
+    return;
+  }
+  if (!responseTime) {
+    setFeedback(feedback, "Please choose the response timing.");
+    return;
+  }
+  if (!emailPattern.test(email)) {
+    setFeedback(feedback, "Please enter a valid email address.");
+    return;
+  }
+  if (message.length < 10) {
+    setFeedback(feedback, "Please add a short message with at least 10 characters.");
+    return;
+  }
+
+  setFeedback(feedback, "Opening a prepared email draft.", "ready");
+  const subject = encodeURIComponent(`Portfolio enquiry: ${role}`);
   const body = encodeURIComponent(
-    `Hi Mohammed,\n\nA visitor used the portfolio chat option.\n\nMessage: ${form.get("message")}\nVisitor email: ${form.get("email")}\n\nSource: Mohammed Siddique portfolio`
+    `Hi Mohammed,\n\nI used your guided portfolio enquiry assistant.\n\nEnquiry type: ${role}\nResponse timing: ${responseTime}\nVisitor email: ${email}\n\nMessage:\n${message}\n\nPlease respond as soon as possible via the email provided above.\n\nSource: Mohammed Siddique portfolio\nPortfolio: https://mohammed-siddique-data-ai-portfolio.vercel.app`
   );
   window.location.href = `mailto:siddique.infra08091998@gmail.com?subject=${subject}&body=${body}`;
 });

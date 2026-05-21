@@ -1,0 +1,49 @@
+name: Project Improvement Planner
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 8 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  prepare-improvement-notes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Create safe improvement report
+        run: |
+          mkdir -p improvement-artifacts
+          cat > improvement-artifacts/project-improvement-report.md <<'REPORT'
+          # Daily Project Improvement Suggestions
+
+          This workflow does not commit code, publish fake projects, or modify repositories automatically. It creates a review artifact only.
+
+          ## Suggested Review Queue
+
+          1. Pick one priority project from `docs/project-repo-polishing-plan.md`.
+          2. Check whether the source material contains private university files, rubrics, answer sheets or restricted datasets.
+          3. Draft or update the project README with:
+             - problem statement
+             - dataset description
+             - methods used
+             - results
+             - limitations
+             - future improvements
+          4. Prepare one clean LinkedIn draft from `docs/linkedin-post-drafts.md`.
+          5. Create GitHub issues manually for the next concrete tasks.
+
+          ## Quality Gate
+
+          Do not publish a project until the notebook/code is reproducible, the README is complete, and all academic/private material has been removed.
+          REPORT
+
+      - name: Upload improvement report
+        uses: actions/upload-artifact@v4
+        with:
+          name: project-improvement-report
+          path: improvement-artifacts/project-improvement-report.md
