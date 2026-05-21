@@ -817,8 +817,8 @@ h3 {
 
 .skill-layout {
   display: grid;
-  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1fr);
-  gap: 26px;
+  grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1fr);
+  gap: 30px;
   align-items: center;
 }
 
@@ -826,10 +826,14 @@ h3 {
   min-height: 500px;
   display: grid;
   place-items: center;
+  overflow: visible;
+  padding: 12px 0 12px 22px;
 }
 
 #skillChart {
-  width: min(100%, 500px);
+  display: block;
+  width: min(100%, 560px);
+  max-width: 100%;
   height: auto;
 }
 
@@ -1412,6 +1416,15 @@ body.is-replaying main {
     min-height: 340px;
   }
 
+  .skill-visual {
+    min-height: 430px;
+    padding: 8px 12px;
+  }
+
+  #skillChart {
+    width: min(100%, 520px);
+  }
+
   .theme-grid,
   .expertise-grid,
   .project-grid,
@@ -1505,6 +1518,15 @@ body.is-replaying main {
     width: 176px;
     height: 176px;
     margin: 26px auto 20px;
+  }
+
+  .skill-visual {
+    min-height: 330px;
+    padding: 4px 0;
+  }
+
+  #skillChart {
+    width: min(100%, 390px);
   }
 
   .project-card {

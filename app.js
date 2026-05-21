@@ -652,9 +652,10 @@ function drawSkillChart() {
   if (!skillCanvas) return;
   const ctx = skillCanvas.getContext("2d");
   const dpr = Math.min(2, window.devicePixelRatio || 1);
-  const size = 620;
+  const size = 720;
   skillCanvas.width = size * dpr;
   skillCanvas.height = size * dpr;
+  skillCanvas.dataset.chartSize = String(size);
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   ctx.clearRect(0, 0, size, size);
   const center = size / 2;
@@ -667,7 +668,7 @@ function drawSkillChart() {
     ["Consulting", 82],
     ["Data QA", 92],
   ];
-  const radius = 210;
+  const radius = 218;
   ctx.strokeStyle = colorWithAlpha(cssVar("--text"), 0.14);
   ctx.lineWidth = 1;
   for (let ring = 1; ring <= 4; ring++) {
@@ -683,7 +684,7 @@ function drawSkillChart() {
   ctx.beginPath();
   points.forEach(([x, y], index) => (index ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
   ctx.closePath();
-  const gradient = ctx.createLinearGradient(120, 120, 500, 500);
+  const gradient = ctx.createLinearGradient(150, 150, 570, 570);
   gradient.addColorStop(0, colorWithAlpha(cssVar("--a"), 0.54));
   gradient.addColorStop(1, colorWithAlpha(cssVar("--c"), 0.26));
   ctx.fillStyle = gradient;
@@ -691,17 +692,34 @@ function drawSkillChart() {
   ctx.strokeStyle = cssVar("--a");
   ctx.lineWidth = 2;
   ctx.stroke();
+  const labelBounds = [];
   points.forEach(([x, y, angle], index) => {
     ctx.fillStyle = cssVar("--c");
     ctx.beginPath();
     ctx.arc(x, y, 5, 0, Math.PI * 2);
     ctx.fill();
-    const labelRadius = radius + 42;
+    const labelRadius = radius + 66;
     ctx.fillStyle = cssVar("--text");
     ctx.font = "700 15px Inter, sans-serif";
-    ctx.textAlign = Math.cos(angle) > 0.2 ? "left" : Math.cos(angle) < -0.2 ? "right" : "center";
-    ctx.fillText(skills[index][0], center + Math.cos(angle) * labelRadius, center + Math.sin(angle) * labelRadius);
+    ctx.textBaseline = "middle";
+    const label = skills[index][0];
+    const width = ctx.measureText(label).width;
+    const padding = 24;
+    const cos = Math.cos(angle);
+    let align = cos > 0.2 ? "left" : cos < -0.2 ? "right" : "center";
+    let labelX = center + cos * labelRadius;
+    let labelY = center + Math.sin(angle) * labelRadius;
+    labelY = Math.min(size - padding, Math.max(padding, labelY));
+    if (align === "left") labelX = Math.min(size - width - padding, Math.max(padding, labelX));
+    if (align === "right") labelX = Math.max(width + padding, Math.min(size - padding, labelX));
+    if (align === "center") labelX = Math.min(size - width / 2 - padding, Math.max(width / 2 + padding, labelX));
+    ctx.textAlign = align;
+    ctx.fillText(label, labelX, labelY);
+    const left = align === "right" ? labelX - width : align === "center" ? labelX - width / 2 : labelX;
+    labelBounds.push({ label, left, right: left + width, top: labelY - 8, bottom: labelY + 8 });
   });
+  skillCanvas.dataset.labelBounds = JSON.stringify(labelBounds);
+  window.__skillChartLabelBounds = labelBounds;
 }
 
 function colorWithAlpha(color, alpha) {
