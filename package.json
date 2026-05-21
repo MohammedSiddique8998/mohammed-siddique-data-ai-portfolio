@@ -1,0 +1,14 @@
+{
+  "name": "mohammed-siddique-ai-data-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Interactive personal portfolio for Data Science, AI Engineering, Analytics and AI Consulting roles.",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/server.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/server.mjs dist 4174"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en" data-theme="cyber">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Mohammed Siddique portfolio for data science, AI engineering, analytics, and AI consulting roles."
+    />
+    <meta name="theme-color" content="#071018" />
+    <meta property="og:title" content="Mohammed Siddique | Data Science and AI Portfolio" />
+    <meta
+      property="og:description"
+      content="MSc Data Science and Artificial Intelligence portfolio featuring machine learning, analytics, automation, and AI consulting projects."
+    />
+    <meta property="og:type" content="website" />
+    <title>Mohammed Siddique | Data Science and AI Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=13" />
+  </head>
+  <body>
+    <div class="loading-screen" id="loader" aria-hidden="true">
+      <div class="loader-mark">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <p>Calibrating AI portfolio</p>
+    </div>
+
+    <canvas id="scene-canvas" aria-hidden="true"></canvas>
+    <canvas id="data-canvas" aria-hidden="true"></canvas>
+    <div class="motion-portal" id="motionPortal" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+    <header class="site-header" id="top">
+      <a class="brand" href="#hero" aria-label="Mohammed Siddique home">
+        <span class="brand-mark">MS</span>
+        <span>
+          <strong>Mohammed Siddique</strong>
+          <em>Data Science and AI</em>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Switch visual theme">
+          <span></span>
+        </button>
+        <button class="menu-button" id="menuToggle" type="button" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section" id="hero">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">MSc Data Science and Artificial Intelligence | University of Liverpool</p>
+          <h1>Data science, AI engineering and analytics for practical business impact.</h1>
+          <p class="hero-lede">
+            I combine machine learning, Python, SQL, Power BI, automation workflows and consulting thinking to turn
+            messy data and complex operations into reliable, decision-ready systems.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary magnetic" href="#projects">View Projects</a>
+            <a
+              class="button secondary magnetic"
+              href="./assets/Mohammed_Siddique_Master_CV.pdf"
+              download="Mohammed_Siddique_Master_CV.pdf"
+            >
+              Download CV
+            </a>
+          </div>
+          <div class="signal-strip" aria-label="Career highlights">
+            <div>
+              <strong data-count="150">0</strong>
+              <span>configuration projects</span>
+            </div>
+            <div>
+              <strong data-count="200">0</strong>
+              <span>automation workflows</span>
+            </div>
+            <div>
+              <strong data-count="60">0</strong>
+              <span>percent proposal-time reduction potential</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-panel reveal">
+          <div class="live-card">
+            <div class="card-topline">
+              <span>how I work</span>
+              <b>AI + analytics</b>
+            </div>
+            <div class="pipeline-orbit" aria-hidden="true">
+              <strong>DATA</strong>
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="capability-flow" aria-label="Core capability flow">
+              <span>Clean Data</span>
+              <span>Validate Logic</span>
+              <span>Build Models</span>
+              <span>Deliver Insight</span>
+            </div>
+            <div class="stack-list">
+              <span>Python</span>
+              <span>SQL</span>
+              <span>ML</span>
+              <span>Power BI</span>
+              <span>AI Consulting</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section" id="about">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Professional profile</p>
+          <h2>Turning complex data and workflows into reliable AI-ready insight.</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>
+              I am an MSc Data Science and Artificial Intelligence student with a background in systems configuration,
+              catalogue data, workflow automation, CAD/design-to-production processes, client support and process
+              improvement. My work has trained me to care about data quality, documentation, reliability and business
+              usefulness, not only models.
+            </p>
+            <p>
+              I am strongest where data, systems and people meet: validating messy structured datasets, analysing
+              workflow problems, building practical AI concepts, and explaining technical ideas in clear business
+              language.
+            </p>
+          </div>
+          <div class="insight-board reveal" aria-label="Positioning highlights">
+            <div><strong>Roles</strong><span>Data Analyst, Data Scientist, AI Engineer, Business Analyst, AI Consultant</span></div>
+            <div><strong>Focus</strong><span>Machine learning, analytics, automation, reporting, reliable data workflows</span></div>
+            <div><strong>Location</strong><span>Liverpool, United Kingdom | International exposure across India, Bahrain and UK</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills section" id="skills">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Technical capability</p>
+          <h2>Tools and methods I use to analyse, model and communicate data.</h2>
+        </div>
+        <div class="skill-layout">
+          <div class="skill-visual reveal">
+            <canvas id="skillChart" width="620" height="620" aria-label="Interactive skill visualisation"></canvas>
+          </div>
+          <div class="skill-groups reveal">
+            <article>
+              <h3>Data and Analytics</h3>
+              <p>SQL, Python, Pandas, NumPy, data cleaning, EDA, feature engineering, applied statistics, Excel.</p>
+            </article>
+            <article>
+              <h3>Machine Learning and AI</h3>
+              <p>Scikit-learn, classification, regression, SVM, random forests, neural networks, model evaluation.</p>
+            </article>
+            <article>
+              <h3>Visualisation and Reporting</h3>
+              <p>Power BI, Matplotlib, Seaborn, dashboard storytelling, KPI reporting and stakeholder-ready insights.</p>
+            </article>
+            <article>
+              <h3>Automation and Systems</h3>
+              <p>Rule-based logic, workflow optimisation, data validation, issue triage, RCA, documentation and QA.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="expertise section" id="expertise">
+        <div class="section-heading reveal">
+          <p class="eyebrow">AI and analytics expertise</p>
+          <h2>Where my background connects directly to data and AI roles.</h2>
+        </div>
+        <div class="expertise-grid">
+          <article class="reveal"><span>01</span><h3>Predictive modelling</h3><p>Classification, regression, model comparison, feature preparation and performance evaluation.</p></article>
+          <article class="reveal"><span>02</span><h3>Decision intelligence</h3><p>Turning operational data into dashboards, metrics, reports and useful recommendations.</p></article>
+          <article class="reveal"><span>03</span><h3>AI consulting</h3><p>Problem framing, 5 Whys, SWOT, workflow mapping and AI opportunity design for practical use cases.</p></article>
+          <article class="reveal"><span>04</span><h3>Reliable data systems</h3><p>Validation checks, SKU mapping, configuration logic, documentation and troubleshooting.</p></article>
+        </div>
+      </section>
+
+      <section class="experience section" id="experience">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Relevant experience</p>
+          <h2>Practical data validation, automation and systems experience.</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <time>Nov 2025 - Dec 2025</time>
+            <h3>AI Consulting Micro-Internship | Accenture UK</h3>
+            <p>Analysed business problems, structured AI opportunities and designed an NLP proposal automation concept.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <time>Dec 2023 - date to confirm</time>
+            <h3>Catalogue Executive | Infurnia Pvt Ltd</h3>
+            <p>Managed 150+ catalogue/configuration projects, validated datasets, mapped SKUs and improved automated output reliability.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <time>2023</time>
+            <h3>Pre-Production Engineer | Finemake Pvt Ltd</h3>
+            <p>Transformed design specifications into structured production datasets and improved reporting accuracy.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <time>Dec 2021 - Jun 2023</time>
+            <h3>Nucleus Configuration Specialist / IMOS Designer | Homelane Pvt Ltd</h3>
+            <p>Configured 200+ backend automation workflows, performed RCA and improved data-driven workflow reliability.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <time>Dates to confirm</time>
+            <h3>AutoCAD Draftsman / Project Coordinator | Bahrain and India</h3>
+            <p>Worked with technical data, CAD documentation, project coordination and stakeholder requirements in design-to-execution environments.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="projects section" id="projects">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Project portfolio</p>
+          <h2>Applied machine learning, analytics and AI consulting work.</h2>
+        </div>
+        <div class="filter-bar reveal" role="list" aria-label="Project filters">
+          <button class="filter active" data-filter="all" type="button">All</button>
+          <button class="filter" data-filter="ml" type="button">ML</button>
+          <button class="filter" data-filter="ai" type="button">AI Consulting</button>
+          <button class="filter" data-filter="analytics" type="button">Analytics</button>
+          <button class="filter" data-filter="systems" type="button">Systems</button>
+        </div>
+        <div class="project-grid" id="projectGrid"></div>
+      </section>
+
+      <section class="certs section" id="certifications">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Certifications and training</p>
+          <h2>Formal learning that supports my data science and AI path.</h2>
+        </div>
+        <div class="cert-grid">
+          <article class="reveal">MITx 6.86x Machine Learning with Python</article>
+          <article class="reveal">PGP in Data Science and Machine Learning</article>
+          <article class="reveal">MSSQL Developer Course</article>
+          <article class="reveal">Power BI Training</article>
+          <article class="reveal">Python for Data Science Training</article>
+          <article class="reveal">AI Consulting Micro-Internship, Accenture UK</article>
+        </div>
+      </section>
+
+      <section class="insights section" id="insights">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Current interests</p>
+          <h2>Areas I am actively building deeper expertise in.</h2>
+        </div>
+        <div class="insight-cards">
+          <article class="reveal"><h3>Explainable AI in high-stakes domains</h3><p>Fairness, interpretability and responsible model deployment for legal and healthcare-style prediction tasks.</p></article>
+          <article class="reveal"><h3>Forecasting for energy systems</h3><p>Time-series features, seasonality, RMSE/MAE evaluation and data science for sustainability use cases.</p></article>
+          <article class="reveal"><h3>Automation-first analytics</h3><p>Using data validation, rule-based logic and AI assistance to reduce manual work and improve consistency.</p></article>
+        </div>
+      </section>
+
+      <section class="resume section" id="resume">
+        <div class="resume-panel reveal">
+          <div>
+            <p class="eyebrow">Resume</p>
+            <h2>Download my master CV for data, AI and analytics roles.</h2>
+            <p>Available as PDF and Word document. The portfolio keeps the CV content focused on data, AI, analytics and consulting roles.</p>
+          </div>
+          <div class="resume-actions">
+            <a
+              class="button primary magnetic"
+              href="./assets/Mohammed_Siddique_Master_CV.pdf"
+              download="Mohammed_Siddique_Master_CV.pdf"
+            >
+              Download PDF
+            </a>
+            <a
+              class="button secondary magnetic"
+              href="./assets/Mohammed_Siddique_Master_CV.docx"
+              download="Mohammed_Siddique_Master_CV.docx"
+            >
+              Download DOCX
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section" id="contact">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Connect about data science, AI engineering or analytics opportunities.</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <a href="mailto:siddique.infra08091998@gmail.com">siddique.infra08091998@gmail.com</a>
+            <a href="tel:+447464139684">+44 7464 139684</a>
+            <a href="https://www.linkedin.com/in/mohammedsiddique-ds" target="_blank" rel="noreferrer">LinkedIn profile</a>
+            <p>
+              Prefer direct email? The contact form is prepared for secure email delivery, and the mail link above is
+              the reliable fallback.
+            </p>
+          </div>
+          <form
+            class="contact-form reveal"
+            id="contactForm"
+            action="https://formsubmit.co/siddique.infra08091998@gmail.com"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="Portfolio enquiry for Mohammed Siddique" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <label>
+              Name
+              <input name="name" autocomplete="name" required />
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" autocomplete="email" required />
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="4" required></textarea>
+            </label>
+            <button class="button primary" type="submit">Send to Gmail</button>
+            <small>
+              First live FormSubmit message may require one-time Gmail activation. After activation, messages are sent
+              directly to the listed inbox.
+            </small>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <aside class="chat-concierge" id="chatConcierge" aria-live="polite">
+      <button class="chat-toggle" id="chatToggle" type="button" aria-expanded="false">
+        Hi
+      </button>
+      <form
+        class="chat-panel"
+        id="chatForm"
+        action="mailto:siddique.infra08091998@gmail.com"
+        method="POST"
+        enctype="text/plain"
+      >
+        <input type="hidden" name="_subject" value="Portfolio chatbot enquiry for Mohammed Siddique" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <h3>AI Portfolio Concierge</h3>
+        <p>Send a quick enquiry about data, AI, analytics or internship opportunities.</p>
+        <label>
+          Your email
+          <input name="email" type="email" autocomplete="email" required />
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="3" required>I would like to connect regarding a data/AI opportunity.</textarea>
+        </label>
+        <button class="button primary" type="submit">Send to Gmail</button>
+        <small>Opens a pre-filled email to Mohammed's Gmail instantly.</small>
+      </form>
+    </aside>
+
+    <div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+      <div class="modal-backdrop" data-close-modal></div>
+      <article class="modal-card">
+        <button class="modal-close" type="button" data-close-modal aria-label="Close project details">x</button>
+        <p class="eyebrow" id="modalType"></p>
+        <h2 id="modalTitle"></h2>
+        <div id="modalBody"></div>
+        <div class="modal-metrics" id="modalMetrics"></div>
+        <div class="modal-stack" id="modalStack"></div>
+        <div class="modal-actions">
+          <button class="button secondary" id="emailProjectBrief" type="button">Email Project Brief</button>
+          <a class="button secondary" href="#contact" data-close-modal>Discuss This Project</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="modal policy-modal" id="policyModal" role="dialog" aria-modal="true" aria-labelledby="policyTitle" hidden>
+      <div class="modal-backdrop" data-close-policy></div>
+      <article class="modal-card">
+        <button class="modal-close" type="button" data-close-policy aria-label="Close policy details">x</button>
+        <p class="eyebrow">Portfolio policy</p>
+        <h2 id="policyTitle"></h2>
+        <p id="policyBody"></p>
+      </article>
+    </div>
+
+    <footer class="footer">
+      <div>
+        <strong>Made by Mohammed Siddique</strong>
+        <p>Data Science and AI Portfolio | 2026</p>
+      </div>
+      <div class="footer-links">
+        <button type="button" data-policy="privacy">Privacy</button>
+        <button type="button" data-policy="terms">Terms</button>
+        <button type="button" data-policy="conditions">Conditions</button>
+      </div>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="./app.js?v=13" defer></script>
+  </body>
+</html>
