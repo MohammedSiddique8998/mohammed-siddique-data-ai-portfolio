@@ -116,6 +116,31 @@ const projects = [
     bars: [74, 78, 90],
   },
   {
+    title: "Data Mining Text Clustering",
+    type: "Unsupervised Learning",
+    category: "analytics",
+    summary:
+      "Clean portfolio project for sentence clustering using preprocessing, TF-IDF, K-Means, silhouette scoring and PCA visualisation.",
+    body:
+      "Rebuilt a rough text clustering workflow into a public-safe project with dependency-light Python code, a synthetic demo corpus, generated cluster assignments, top-term interpretation and SVG visual outputs.",
+    problem:
+      "Unlabelled text data needs structure before it can support search, reporting, topic discovery or analyst review.",
+    approach:
+      "Cleaned sentence text, built TF-IDF vectors, tested K-Means cluster counts, selected K by silhouette score and visualised clusters with PCA.",
+    result:
+      "Generated a reproducible demo run with 40 documents, 78 TF-IDF terms, selected K=4, balanced 10-document clusters and silhouette score 0.2111.",
+    impact:
+      "Shows practical data mining, feature representation, unsupervised learning and visual interpretation skills.",
+    repoUrl: "https://github.com/MohammedSiddique8998/data-mining-text-clustering",
+    stack: ["Python", "TF-IDF", "K-Means", "PCA", "Silhouette score", "Text mining"],
+    metrics: [
+      ["K=4", "selected clusters"],
+      ["0.2111", "silhouette"],
+      ["78", "TF-IDF terms"],
+    ],
+    bars: [84, 80, 76],
+  },
+  {
     title: "Bio-Inspired Multi-Armed Bandit RL",
     type: "Reinforcement Learning",
     category: "ml",

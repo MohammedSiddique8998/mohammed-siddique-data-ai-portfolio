@@ -95,32 +95,44 @@ README content:
 
 ### 3. Data Mining and Visualisation Clustering
 
-Suggested repository name: `data-mining-clustering-visualisation`
+Suggested repository name: `data-mining-text-clustering`
+
+Status: published as a cleaned portfolio repository at `https://github.com/MohammedSiddique8998/data-mining-text-clustering`.
 
 Portfolio-ready structure:
 
 ```text
-data-mining-clustering-visualisation/
+data-mining-text-clustering/
   README.md
   requirements.txt
+  data/
+    sample_sentences.tsv
   notebooks/
-    clustering_workflow.ipynb
+    README.md
   src/
-    preprocess.py
-    cluster.py
-    evaluate.py
-  screenshots/
-    silhouette_plot.png
-    cluster_visualisation.png
+    preprocessing.py
+    tfidf.py
+    clustering.py
+    visualisation.py
+    experiment.py
+    sentence_transformer_optional.py
+  reports/
+    experiment_card.md
+  results/
+    metrics.json
+    cluster_assignments.csv
+    cluster_terms.csv
+    silhouette_scores.svg
+    pca_cluster_map.svg
 ```
 
 README content:
-- Problem statement: discover structure in unlabeled data.
-- Dataset: public or permitted data source and feature summary.
-- Methods: preprocessing, scaling, K-Means or hierarchical clustering, silhouette analysis.
-- Results: cluster metrics and visualisations.
-- Limitations: sensitivity to scaling and number of clusters.
-- Future improvements: PCA/UMAP, cluster profiling, dashboard.
+- Problem statement: discover structure in unlabelled sentence data.
+- Dataset: safe synthetic demo corpus plus instructions for permitted TSV data.
+- Methods: preprocessing, TF-IDF, K-Means, silhouette analysis and PCA visualisation.
+- Results: selected K=4, silhouette score 0.2111, balanced cluster sizes and top-term interpretation.
+- Limitations: synthetic demo data, lexical TF-IDF baseline and moderate silhouette score.
+- Future improvements: sentence-transformer embeddings, t-SNE/UMAP, cluster stability checks and dashboard.
 
 ### 4. Energy Demand Forecasting
 

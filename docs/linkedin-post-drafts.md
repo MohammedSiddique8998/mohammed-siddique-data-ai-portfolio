@@ -28,17 +28,17 @@ Key learning: small policy choices can strongly affect long-term rewards. UCB pe
 GitHub: https://github.com/MohammedSiddique8998/bio-inspired-multi-armed-bandit-rl  
 Portfolio: https://mohammed-siddique-data-ai-portfolio.vercel.app
 
-## Data Mining and Clustering Visualisation
+## Data Mining Text Clustering
 
-I have been converting a clustering workflow into a cleaner portfolio project.
+I have published a clean data mining portfolio project for unsupervised text clustering.
 
-The project focuses on discovering patterns in unlabeled data using preprocessing, scaling, clustering and visual evaluation.
+The project turns unlabelled sentences into interpretable clusters using preprocessing, TF-IDF vectorisation, K-Means clustering, silhouette scoring and PCA visualisation.
 
-Tools used: Python, Pandas, Scikit-learn, clustering algorithms, silhouette analysis and visualisation.
+Tools used: Python, NumPy, TF-IDF, K-Means, PCA, silhouette analysis and SVG visualisation.
 
-Key learning: clustering is not just about running an algorithm. The real value comes from feature preparation, interpretation and explaining what the groups mean.
+Key learning: clustering is not just about running an algorithm. The value comes from careful preprocessing, honest metrics, visual inspection and explaining what the clusters mean.
 
-GitHub: [add repository link when published]  
+GitHub: https://github.com/MohammedSiddique8998/data-mining-text-clustering  
 Portfolio: https://mohammed-siddique-data-ai-portfolio.vercel.app
 
 ## Energy Demand Forecasting
