@@ -4,15 +4,15 @@ Use these drafts only after each project repository has been cleaned and publish
 
 ## Applied AI Image Classification
 
-I have been turning my Applied AI learning into a portfolio-ready image classification project.
+I have published a cleaned portfolio version of my Applied AI image classification project.
 
-The project focuses on building a CNN and transfer learning workflow for image classification, including preprocessing, augmentation, model training, evaluation and visual reporting.
+The project focuses on classifying chest X-ray images into Normal, Opacity and Pneumonia using a custom CNN and DenseNet121 transfer learning workflow.
 
-Tools used: Python, TensorFlow/Keras or PyTorch, CNNs, transfer learning, Matplotlib and confusion matrix evaluation.
+Tools used: Python, PyTorch, CNNs, DenseNet121, transfer learning, Matplotlib and confusion matrix evaluation.
 
-Key learning: model performance is only one part of the work. Clean data preparation, consistent evaluation and clear reporting are what make an AI project useful to others.
+Key learning: model performance is only one part of the work. Clean data preparation, consistent evaluation, visible limitations and clear reporting are what make an AI project useful to others.
 
-GitHub: [add repository link when published]  
+GitHub: https://github.com/MohammedSiddique8998/applied-ai-image-classification  
 Portfolio: https://mohammed-siddique-data-ai-portfolio.vercel.app
 
 ## Reinforcement Learning / Multi-Armed Bandit

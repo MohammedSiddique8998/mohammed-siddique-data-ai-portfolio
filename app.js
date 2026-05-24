@@ -43,28 +43,29 @@ const projects = [
     bars: [88, 76, 82],
   },
   {
-    title: "Brain Tumour Detection",
-    type: "Deep Learning",
+    title: "Applied AI Chest X-ray Classification",
+    type: "Computer Vision",
     category: "ml",
     summary:
-      "Developing an MRI image-classification system using TensorFlow, Keras, CNN transfer learning and evaluation workflows.",
+      "Portfolio-grade image-classification project comparing a custom CNN with DenseNet121 transfer learning for chest X-ray classification.",
     body:
-      "A current deep learning project exploring image preprocessing, augmentation, TensorFlow/Keras model training and transfer learning with CNN architectures such as VGG16 and ResNet50 for MRI scan classification.",
+      "Built a cleaned computer vision pipeline for three-class chest X-ray classification covering preprocessing, conservative augmentation, a custom CNN, DenseNet121 transfer learning benchmarks and held-out test evaluation.",
     problem:
-      "MRI image classification requires consistent preprocessing and careful model evaluation before predictions can be trusted.",
+      "Chest X-ray classification needs reliable preprocessing, careful evaluation and responsible framing before any model output can be trusted.",
     approach:
-      "Exploring image preprocessing, augmentation and CNN transfer learning using TensorFlow/Keras with VGG16 and ResNet50-style architectures.",
+      "Compared a compact custom CNN against DenseNet121 feature extraction and fine-tuning using stratified train/validation/test splits.",
     result:
-      "Built the structure for a deep learning image-classification pipeline; model tuning and reporting are continuing.",
+      "Selected custom CNN reached 91.57% test accuracy, 0.9175 macro F1-score and 0.8733 Cohen's Kappa.",
     impact:
-      "Shows developing computer vision capability and a responsible approach to high-stakes healthcare-style AI tasks.",
-    stack: ["TensorFlow", "Keras", "CNN", "VGG16", "ResNet50", "Image preprocessing"],
+      "Shows recruiter-ready computer vision, model comparison, evaluation and responsible AI communication skills.",
+    repoUrl: "https://github.com/MohammedSiddique8998/applied-ai-image-classification",
+    stack: ["Python", "PyTorch", "CNN", "DenseNet121", "Transfer learning", "Medical imaging"],
     metrics: [
-      ["MRI", "image data"],
-      ["CNN", "transfer learning"],
-      ["DL", "model evaluation"],
+      ["91.57%", "test accuracy"],
+      ["0.9175", "macro F1-score"],
+      ["3", "image classes"],
     ],
-    bars: [72, 84, 68],
+    bars: [92, 92, 87],
   },
   {
     title: "AI Proposal Automation System",

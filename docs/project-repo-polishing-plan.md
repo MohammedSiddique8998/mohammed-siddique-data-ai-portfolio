@@ -25,32 +25,39 @@ The reviewed folders include notebooks, reports, zips, rubrics, course content a
 
 Suggested repository name: `applied-ai-image-classification`
 
+Status: published as a cleaned portfolio repository at `https://github.com/MohammedSiddique8998/applied-ai-image-classification`.
+
 Portfolio-ready structure:
 
 ```text
 applied-ai-image-classification/
+  .gitattributes
+  .gitignore
   README.md
   requirements.txt
-  notebooks/
-    image_classification_transfer_learning.ipynb
   src/
+    config.py
+    data.py
+    models.py
     train.py
     evaluate.py
-    model.py
+  notebooks/
+    README.md
   reports/
     model_card.md
   screenshots/
-    training_curves.png
-    confusion_matrix.png
+    custom_cnn_training_curves.png
+    custom_cnn_confusion_matrix.png
+    densenet_training_curves.png
 ```
 
 README content:
-- Problem statement: classify images using CNN and transfer learning.
-- Dataset: describe only public or permitted dataset source.
-- Methods: preprocessing, augmentation, custom CNN baseline, transfer learning, evaluation.
-- Results: accuracy/loss curves, confusion matrix, classification report.
-- Limitations: dataset size, class imbalance, generalisation risk.
-- Future improvements: hyperparameter tuning, explainability, deployment demo.
+- Problem statement: classify chest X-ray images into Normal, Opacity and Pneumonia.
+- Dataset: summarise class counts and split without publishing restricted data.
+- Methods: preprocessing, augmentation, custom CNN baseline, DenseNet121 transfer learning and evaluation.
+- Results: accuracy/loss curves, confusion matrix, classification report and selected model metrics.
+- Limitations: educational/non-clinical use, no external validation and opacity/normal confusion risk.
+- Future improvements: external validation, explainability, calibration and deployment demo.
 
 ### 2. Bio-Inspired Learning / Multi-Armed Bandit
 
