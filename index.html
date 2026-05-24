@@ -21,7 +21,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20" />
+    <link rel="stylesheet" href="./styles.css?v=21" />
   </head>
   <body>
     <div class="loading-screen" id="loader" aria-hidden="true">
@@ -316,21 +316,20 @@
             <a href="https://mohammed-siddique-data-ai-portfolio.vercel.app" target="_blank" rel="noreferrer">Live portfolio</a>
             <a href="https://github.com/MohammedSiddique8998" target="_blank" rel="noreferrer">GitHub profile</a>
             <a href="https://github.com/MohammedSiddique8998/mohammed-siddique-data-ai-portfolio" target="_blank" rel="noreferrer">Portfolio source repo</a>
+            <a class="button secondary direct-email" href="mailto:siddique.infra08091998@gmail.com">Email me directly</a>
             <p>
-              Prefer direct email? The contact form is prepared for secure email delivery, and the mail link above is
-              the reliable fallback.
+              The contact form opens a prepared email draft in your email app or Gmail. It does not redirect you away
+              from this portfolio.
             </p>
           </div>
           <form
             class="contact-form reveal"
             id="contactForm"
-            action="https://formsubmit.co/siddique.infra08091998@gmail.com"
+            action="mailto:siddique.infra08091998@gmail.com"
             method="POST"
+            enctype="text/plain"
             novalidate
           >
-            <input type="hidden" name="_subject" value="Portfolio enquiry for Mohammed Siddique" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
             <label>
               Name
               <input name="name" autocomplete="name" required />
@@ -347,8 +346,7 @@
             <p class="form-feedback" id="contactFeedback" aria-live="polite"></p>
             <small>
               Press Enter to send. Use Shift+Enter inside the message box for a new line.
-              First live FormSubmit message may require one-time Gmail activation. After activation, messages are sent
-              directly to the listed inbox.
+              If your email app does not open, use the direct email button.
             </small>
           </form>
         </div>
@@ -434,6 +432,6 @@
       <a href="#top">Back to top</a>
     </footer>
 
-    <script src="./app.js?v=20" defer></script>
+    <script src="./app.js?v=21" defer></script>
   </body>
 </html>

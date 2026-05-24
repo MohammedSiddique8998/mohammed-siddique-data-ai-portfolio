@@ -43,21 +43,13 @@ portfolio-site/
 - Brand-name click refresh gesture with motion replay
 - Filterable project cards with case-study modals
 - PDF and DOCX CV download links
-- Contact section with email, phone, LinkedIn and FormSubmit form
+- Contact section with email, phone, LinkedIn and mailto-based enquiry form
 - Floating guided enquiry assistant that opens a pre-filled email draft
 - Footer with made-by credit, privacy, terms and conditions modals
 
 ## Contact Delivery
 
-The main contact form is wired to FormSubmit:
-
-```text
-https://formsubmit.co/siddique.infra08091998@gmail.com
-```
-
-FormSubmit usually requires a one-time activation email after the first live form submission. Open the activation email in Gmail and confirm it once. After that, future main contact form messages should be delivered to the inbox.
-
-The floating "Hi" widget uses a `mailto:` fallback, so it opens a visitor's email client with a pre-filled message to:
+The main contact form and the floating "Hi" widget use `mailto:` links. They open the visitor's email client or configured Gmail handler with a pre-filled message to:
 
 ```text
 siddique.infra08091998@gmail.com

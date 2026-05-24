@@ -12,6 +12,9 @@ const policyModal = document.querySelector("#policyModal");
 const policyTitle = document.querySelector("#policyTitle");
 const policyBody = document.querySelector("#policyBody");
 const motionPortal = document.querySelector("#motionPortal");
+const CONTACT_EMAIL = "siddique.infra08091998@gmail.com";
+const MAILTO_SUCCESS_MESSAGE =
+  "Your email app should open now. If it does not, please email me directly at siddique.infra08091998@gmail.com.";
 
 const themes = ["cyber", "consultant", "engineer"];
 const savedTheme = localStorage.getItem("portfolio-theme");
@@ -494,7 +497,7 @@ document.querySelector("#emailProjectBrief")?.addEventListener("click", () => {
   const body = encodeURIComponent(
     `Hi Mohammed,\n\nI saw your project "${project.title}" on your portfolio.\n\nSummary: ${project.summary}\n\nTech stack: ${project.stack.join(", ")}\n\nI would like to discuss this project further.\n\nBest,\n`
   );
-  window.location.href = `mailto:siddique.infra08091998@gmail.com?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
 });
 
 const contactForm = document.querySelector("#contactForm");
@@ -513,10 +516,16 @@ function setFeedback(element, message, type = "error") {
   element.classList.toggle("is-ready", type === "ready");
 }
 
-function validateContactForm(form, feedbackElement) {
-  const name = form.elements.name?.value.trim();
-  const email = form.elements.email?.value.trim();
-  const message = form.elements.message?.value.trim();
+function getContactValues(form) {
+  return {
+    name: form.elements.name?.value.trim() || "",
+    email: form.elements.email?.value.trim() || "",
+    message: form.elements.message?.value.trim() || "",
+  };
+}
+
+function validateContactValues(values, form, feedbackElement) {
+  const { name, email, message } = values;
 
   if (!name || name.length < 2) {
     setFeedback(feedbackElement, "Please enter your name before sending.");
@@ -533,8 +542,24 @@ function validateContactForm(form, feedbackElement) {
     form.elements.message?.focus();
     return false;
   }
-  setFeedback(feedbackElement, "Ready to send.", "ready");
   return true;
+}
+
+function buildPortfolioMailto({ name, email, message }) {
+  const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
+  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+  return `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+}
+
+function openMailDraft(mailtoUrl, feedbackElement) {
+  setFeedback(feedbackElement, MAILTO_SUCCESS_MESSAGE, "ready");
+  window.location.href = mailtoUrl;
+}
+
+function handleContactFormSubmit(form, feedbackElement) {
+  const values = getContactValues(form);
+  if (!validateContactValues(values, form, feedbackElement)) return;
+  openMailDraft(buildPortfolioMailto(values), feedbackElement);
 }
 
 function submitFormFromKeyboard(form) {
@@ -554,9 +579,8 @@ contactForm?.addEventListener("keydown", (event) => {
 });
 
 contactForm?.addEventListener("submit", (event) => {
-  if (!validateContactForm(event.currentTarget, contactFeedback)) {
-    event.preventDefault();
-  }
+  event.preventDefault();
+  handleContactFormSubmit(event.currentTarget, contactFeedback);
 });
 
 document.querySelector("#chatToggle")?.addEventListener("click", (event) => {
@@ -570,6 +594,14 @@ if (chatForm) {
   chatForm.noValidate = true;
   chatForm.setAttribute("novalidate", "");
 }
+
+chatForm?.addEventListener("keydown", (event) => {
+  if (event.key !== "Enter") return;
+  const isMessageBox = event.target.matches("textarea");
+  if (isMessageBox && event.shiftKey) return;
+  event.preventDefault();
+  submitFormFromKeyboard(chatForm);
+});
 
 chatForm?.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -597,19 +629,19 @@ chatForm?.addEventListener("submit", (event) => {
     return;
   }
 
-  setFeedback(feedback, "Opening a prepared email draft.", "ready");
+  setFeedback(feedback, MAILTO_SUCCESS_MESSAGE, "ready");
   const subject = encodeURIComponent(`Portfolio enquiry: ${role}`);
   const body = encodeURIComponent(
     `Hi Mohammed,\n\nI used your guided portfolio enquiry assistant.\n\nEnquiry type: ${role}\nResponse timing: ${responseTime}\nVisitor email: ${email}\n\nMessage:\n${message}\n\nPlease respond as soon as possible via the email provided above.\n\nSource: Mohammed Siddique portfolio\nPortfolio: https://mohammed-siddique-data-ai-portfolio.vercel.app`
   );
-  window.location.href = `mailto:siddique.infra08091998@gmail.com?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
 });
 
 const policyCopy = {
   privacy: {
     title: "Privacy",
     body:
-      "This portfolio only asks for contact details when a visitor chooses to send a message. The static site does not store personal data in a database. Contact forms open an email draft to Mohammed Siddique, and the deployment form action is prepared for email delivery to the listed Gmail address.",
+      "This portfolio only asks for contact details when a visitor chooses to send a message. The static site does not store personal data in a database. Contact forms open an email draft to Mohammed Siddique using the visitor's email app or configured Gmail mailto handler.",
   },
   terms: {
     title: "Terms",
