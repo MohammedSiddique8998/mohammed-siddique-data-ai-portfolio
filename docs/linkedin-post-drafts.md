@@ -4,13 +4,13 @@ Use these drafts only after each project repository has been cleaned and publish
 
 ## Applied AI Image Classification
 
-I have published a cleaned portfolio version of my Applied AI image classification project.
+I have published a corrected portfolio version of my Applied AI image classification project.
 
-The project focuses on classifying chest X-ray images into Normal, Opacity and Pneumonia using a custom CNN and DenseNet121 transfer learning workflow.
+The project focuses on a reproducible chest X-ray image classification pipeline for Normal, Opacity and Pneumonia classes, using a custom CNN and DenseNet121 options.
 
-Tools used: Python, PyTorch, CNNs, DenseNet121, transfer learning, Matplotlib and confusion matrix evaluation.
+Tools used: Python, PyTorch, CNNs, DenseNet121, transfer learning, Matplotlib, balanced accuracy, macro F1 and confusion matrix evaluation.
 
-Key learning: model performance is only one part of the work. Clean data preparation, consistent evaluation, visible limitations and clear reporting are what make an AI project useful to others.
+Key learning: a strong AI portfolio project should be truthful and reproducible. I removed unsupported historical result claims and rebuilt the repo around clear methodology, evaluation and limitations.
 
 GitHub: https://github.com/MohammedSiddique8998/applied-ai-image-classification  
 Portfolio: https://mohammed-siddique-data-ai-portfolio.vercel.app

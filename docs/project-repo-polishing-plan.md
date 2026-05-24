@@ -44,18 +44,17 @@ applied-ai-image-classification/
   notebooks/
     README.md
   reports/
+    consistency_audit.md
     model_card.md
-  screenshots/
-    custom_cnn_training_curves.png
-    custom_cnn_confusion_matrix.png
-    densenet_training_curves.png
+  results/
+    README.md
 ```
 
 README content:
 - Problem statement: classify chest X-ray images into Normal, Opacity and Pneumonia.
 - Dataset: summarise class counts and split without publishing restricted data.
 - Methods: preprocessing, augmentation, custom CNN baseline, DenseNet121 transfer learning and evaluation.
-- Results: accuracy/loss curves, confusion matrix, classification report and selected model metrics.
+- Results: explain that metrics and plots must be regenerated locally because dataset/checkpoints are not published.
 - Limitations: educational/non-clinical use, no external validation and opacity/normal confusion risk.
 - Future improvements: external validation, explainability, calibration and deployment demo.
 

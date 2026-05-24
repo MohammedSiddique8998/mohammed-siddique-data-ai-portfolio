@@ -47,25 +47,25 @@ const projects = [
     type: "Computer Vision",
     category: "ml",
     summary:
-      "Portfolio-grade image-classification project comparing a custom CNN with DenseNet121 transfer learning for chest X-ray classification.",
+      "Corrected portfolio project for a reproducible chest X-ray image-classification pipeline using PyTorch, a custom CNN and DenseNet121 options.",
     body:
-      "Built a cleaned computer vision pipeline for three-class chest X-ray classification covering preprocessing, conservative augmentation, a custom CNN, DenseNet121 transfer learning benchmarks and held-out test evaluation.",
+      "Built a cleaned computer vision repository for three-class chest X-ray classification covering preprocessing, conservative augmentation, model training, imbalance-aware evaluation and responsible non-clinical limitations.",
     problem:
       "Chest X-ray classification needs reliable preprocessing, careful evaluation and responsible framing before any model output can be trusted.",
     approach:
-      "Compared a compact custom CNN against DenseNet121 feature extraction and fine-tuning using stratified train/validation/test splits.",
+      "Implemented a custom CNN plus DenseNet121 feature extraction/fine-tuning options, with documented seed, batch size, image size, split assumptions and evaluation rules.",
     result:
-      "Selected custom CNN reached 91.57% test accuracy, 0.9175 macro F1-score and 0.8733 Cohen's Kappa.",
+      "Corrected the public repo to remove unsupported historical metrics; current results must be regenerated locally from the shipped pipeline and permitted dataset.",
     impact:
       "Shows recruiter-ready computer vision, model comparison, evaluation and responsible AI communication skills.",
     repoUrl: "https://github.com/MohammedSiddique8998/applied-ai-image-classification",
     stack: ["Python", "PyTorch", "CNN", "DenseNet121", "Transfer learning", "Medical imaging"],
     metrics: [
-      ["91.57%", "test accuracy"],
-      ["0.9175", "macro F1-score"],
+      ["Repro", "pipeline"],
+      ["Macro", "F1 + balanced accuracy"],
       ["3", "image classes"],
     ],
-    bars: [92, 92, 87],
+    bars: [86, 84, 78],
   },
   {
     title: "AI Proposal Automation System",
