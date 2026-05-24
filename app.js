@@ -116,28 +116,29 @@ const projects = [
     bars: [74, 78, 90],
   },
   {
-    title: "Multi-Armed Bandit Simulation",
+    title: "Bio-Inspired Multi-Armed Bandit RL",
     type: "Reinforcement Learning",
     category: "ml",
     summary:
-      "Exploration-exploitation simulation comparing epsilon-greedy and Upper Confidence Bound strategies.",
+      "Clean reinforcement learning portfolio project comparing random, greedy, epsilon-greedy and UCB policies.",
     body:
-      "Implemented a reinforcement learning experiment based on the n-armed bandit problem. The simulation compared decision policies, analysed reward optimisation and documented sequential decision-making behaviour in a research-style format.",
+      "Built a reproducible Gaussian n-armed bandit simulation across 5, 10 and 20 arms, generating average-reward and optimal-action-rate plots directly from the current code.",
     problem:
       "Sequential decision systems must balance exploration and exploitation when outcomes are uncertain.",
     approach:
-      "Simulated epsilon-greedy and Upper Confidence Bound policies across repeated decision steps and compared reward behaviour.",
+      "Compared random, greedy, epsilon-greedy and UCB strategies over 500 runs and 1,000 steps per setting using NumPy-based simulation code.",
     result:
-      "Documented policy differences and reward-optimisation behaviour in a research-style simulation.",
+      "UCB c=2 produced the strongest final-window average reward in the generated 5-arm, 10-arm and 20-arm experiments.",
     impact:
       "Builds foundational reinforcement-learning knowledge relevant to optimisation and decision-intelligence work.",
+    repoUrl: "https://github.com/MohammedSiddique8998/bio-inspired-multi-armed-bandit-rl",
     stack: ["Python", "Reinforcement Learning", "Epsilon-greedy", "UCB", "Simulation"],
     metrics: [
-      ["2,000", "decision steps"],
-      ["UCB", "policy comparison"],
+      ["500", "runs per setting"],
+      ["1,000", "steps per run"],
       ["RL", "reward optimisation"],
     ],
-    bars: [82, 79, 73],
+    bars: [88, 84, 78],
   },
   {
     title: "Energy Demand Forecasting",

@@ -17,15 +17,15 @@ Portfolio: https://mohammed-siddique-data-ai-portfolio.vercel.app
 
 ## Reinforcement Learning / Multi-Armed Bandit
 
-I have been exploring reinforcement learning through a multi-armed bandit simulation.
+I have published a clean reinforcement learning portfolio project on multi-armed bandits.
 
-The project studies the exploration-exploitation trade-off by comparing decision strategies such as epsilon-greedy and Upper Confidence Bound.
+The project studies the exploration-exploitation trade-off by comparing random, greedy, epsilon-greedy and Upper Confidence Bound strategies across 5-arm, 10-arm and 20-arm Gaussian bandit testbeds.
 
-Tools used: Python, NumPy, simulation, reward analysis and visualisation.
+Tools used: Python, NumPy, simulation, reward analysis, optimal-action-rate tracking and SVG visualisation.
 
-Key learning: small policy choices can strongly affect long-term rewards, which makes reinforcement learning a powerful way to think about sequential decisions.
+Key learning: small policy choices can strongly affect long-term rewards. UCB performed strongly in the generated experiments because it explores uncertain actions systematically before exploiting.
 
-GitHub: [add repository link when published]  
+GitHub: https://github.com/MohammedSiddique8998/bio-inspired-multi-armed-bandit-rl  
 Portfolio: https://mohammed-siddique-data-ai-portfolio.vercel.app
 
 ## Data Mining and Clustering Visualisation

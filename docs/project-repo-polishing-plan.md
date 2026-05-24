@@ -62,27 +62,34 @@ README content:
 
 Suggested repository name: `reinforcement-learning-bandit-simulation`
 
+Status: published as a cleaned portfolio repository at `https://github.com/MohammedSiddique8998/bio-inspired-multi-armed-bandit-rl`.
+
 Portfolio-ready structure:
 
 ```text
-reinforcement-learning-bandit-simulation/
+bio-inspired-multi-armed-bandit-rl/
   README.md
   requirements.txt
-  notebooks/
-    bandit_simulation.ipynb
   src/
+    agents.py
     bandits.py
-    policies.py
-    run_experiment.py
-  screenshots/
-    reward_comparison.png
-    optimal_action_rate.png
+    experiment.py
+    plotting.py
+    summarise_results.py
+  notebooks/
+    README.md
+  reports/
+    experiment_card.md
+  results/
+    summary_metrics.csv
+    *_average_reward.svg
+    *_optimal_action_rate.svg
 ```
 
 README content:
 - Problem statement: compare exploration-exploitation strategies.
-- Methods: epsilon-greedy and UCB simulation.
-- Results: average reward and optimal action trends.
+- Methods: random, greedy, epsilon-greedy and UCB simulation.
+- Results: average reward, optimal action trends and final-window summary metrics.
 - Limitations: simulated environment, simplified reward distributions.
 - Future improvements: Thompson sampling, contextual bandits, dashboard.
 
