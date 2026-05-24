@@ -556,7 +556,7 @@ function openMailDraft(mailtoUrl, feedbackElement) {
   window.location.href = mailtoUrl;
 }
 
-function handleContactFormSubmit(form, feedbackElement) {
+function handleContactMailto(form, feedbackElement) {
   const values = getContactValues(form);
   if (!validateContactValues(values, form, feedbackElement)) return;
   openMailDraft(buildPortfolioMailto(values), feedbackElement);
@@ -580,7 +580,7 @@ contactForm?.addEventListener("keydown", (event) => {
 
 contactForm?.addEventListener("submit", (event) => {
   event.preventDefault();
-  handleContactFormSubmit(event.currentTarget, contactFeedback);
+  handleContactMailto(event.currentTarget, contactFeedback);
 });
 
 document.querySelector("#chatToggle")?.addEventListener("click", (event) => {
