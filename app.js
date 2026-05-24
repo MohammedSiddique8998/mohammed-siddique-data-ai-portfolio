@@ -632,7 +632,7 @@ chatForm?.addEventListener("submit", (event) => {
   setFeedback(feedback, MAILTO_SUCCESS_MESSAGE, "ready");
   const subject = encodeURIComponent(`Portfolio enquiry: ${role}`);
   const body = encodeURIComponent(
-    `Hi Mohammed,\n\nI used your guided portfolio enquiry assistant.\n\nEnquiry type: ${role}\nResponse timing: ${responseTime}\nVisitor email: ${email}\n\nMessage:\n${message}\n\nPlease respond as soon as possible via the email provided above.\n\nSource: Mohammed Siddique portfolio\nPortfolio: https://mohammed-siddique-data-ai-portfolio.vercel.app`
+    `Hi Mohammed,\n\nI used your guided portfolio enquiry form.\n\nEnquiry type: ${role}\nResponse timing: ${responseTime}\nVisitor email: ${email}\n\nMessage:\n${message}\n\nPlease respond as soon as possible via the email provided above.\n\nSource: Mohammed Siddique portfolio\nPortfolio: https://mohammed-siddique-data-ai-portfolio.vercel.app`
   );
   window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
 });

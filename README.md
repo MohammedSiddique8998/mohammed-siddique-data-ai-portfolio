@@ -44,7 +44,7 @@ portfolio-site/
 - Filterable project cards with case-study modals
 - PDF and DOCX CV download links
 - Contact section with email, phone, LinkedIn and mailto-based enquiry form
-- Floating guided enquiry assistant that opens a pre-filled email draft
+- Floating guided enquiry form that opens a pre-filled email draft
 - Footer with made-by credit, privacy, terms and conditions modals
 
 ## Contact Delivery
