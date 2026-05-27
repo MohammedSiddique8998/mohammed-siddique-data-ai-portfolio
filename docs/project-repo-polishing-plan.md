@@ -41,9 +41,7 @@ Public focus:
 - PCA visualisation and top-term interpretation.
 - Safe synthetic demo corpus with instructions for adding permitted local data.
 
-## Next Priority Repositories
-
-### Real-Time Customer Insight and Churn Intelligence Platform
+### 4. Real-Time Customer Insight and Churn Intelligence Platform
 
 Repository: `real-time-customer-insight-churn-platform`
 
@@ -53,6 +51,8 @@ Public focus:
 - Interactive Streamlit dashboard.
 - Synthetic customer-interaction dataset.
 - Recruiter-friendly architecture and business impact explanation.
+
+## Next Priority Repositories
 
 ### Energy Demand Forecasting
 
