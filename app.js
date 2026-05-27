@@ -46,7 +46,32 @@ const projects = [
     bars: [88, 76, 82],
   },
   {
-    title: "Applied AI Chest X-ray Classification",
+    title: "Real-Time Customer Insight & Churn Intelligence",
+    type: "Customer Analytics",
+    category: "analytics",
+    summary:
+      "Streamlit customer intelligence dashboard that scores churn risk, segments accounts and recommends retention actions from interaction data.",
+    body:
+      "Built a business-focused analytics product using synthetic customer interaction data, Pandas, Plotly and an interpretable risk engine. The workflow cleans customer records, estimates churn risk, groups customers into risk bands and produces retention recommendations that customer success teams can review.",
+    problem:
+      "Customer-facing teams need a faster way to identify high-risk accounts before revenue is lost.",
+    approach:
+      "Created a reproducible sample-data generator, risk scoring workflow, segmentation logic, dashboard KPIs and recommendation rules.",
+    result:
+      "Generated a safe demo run with 300 synthetic customers, 10 high-risk accounts and an estimated £1.8k monthly revenue-at-risk sample metric.",
+    impact:
+      "Shows practical AI product thinking across customer analytics, churn prioritisation, dashboard design and business-ready recommendations.",
+    repoUrl: "https://github.com/MohammedSiddique8998/real-time-customer-insight-churn-platform",
+    stack: ["Python", "Streamlit", "Pandas", "Scikit-learn", "Plotly", "Customer analytics"],
+    metrics: [
+      ["300", "synthetic customers"],
+      ["10", "high-risk accounts"],
+      ["£1.8k", "monthly revenue at risk"],
+    ],
+    bars: [92, 87, 84],
+  },
+  {
+    title: "Intelligent Visual Classification Pipeline",
     type: "Computer Vision",
     category: "ml",
     summary:
@@ -61,7 +86,7 @@ const projects = [
       "Corrected the public repo to remove unsupported historical metrics; current results must be regenerated locally from the shipped pipeline and permitted dataset.",
     impact:
       "Shows recruiter-ready computer vision, model comparison, evaluation and responsible AI communication skills.",
-    repoUrl: "https://github.com/MohammedSiddique8998/applied-ai-image-classification",
+    repoUrl: "https://github.com/MohammedSiddique8998/intelligent-visual-classification-pipeline",
     stack: ["Python", "PyTorch", "CNN", "DenseNet121", "Transfer learning", "Medical imaging"],
     metrics: [
       ["Repro", "pipeline"],
@@ -119,13 +144,13 @@ const projects = [
     bars: [74, 78, 90],
   },
   {
-    title: "Data Mining Text Clustering",
+    title: "Customer Feedback Theme Discovery",
     type: "Unsupervised Learning",
     category: "analytics",
     summary:
-      "Clean portfolio project for sentence clustering using preprocessing, TF-IDF, K-Means, silhouette scoring and PCA visualisation.",
+      "Customer text intelligence project using preprocessing, TF-IDF, K-Means, silhouette scoring and PCA visualisation.",
     body:
-      "Rebuilt a rough text clustering workflow into a public-safe project with dependency-light Python code, a synthetic demo corpus, generated cluster assignments, top-term interpretation and SVG visual outputs.",
+      "Built a public-safe customer feedback clustering workflow with dependency-light Python code, a synthetic demo corpus, generated cluster labels, top-term interpretation and SVG visual outputs.",
     problem:
       "Unlabelled text data needs structure before it can support search, reporting, topic discovery or analyst review.",
     approach:
@@ -133,9 +158,9 @@ const projects = [
     result:
       "Generated a reproducible demo run with 40 documents, 78 TF-IDF terms, selected K=4, balanced 10-document clusters and silhouette score 0.2111.",
     impact:
-      "Shows practical data mining, feature representation, unsupervised learning and visual interpretation skills.",
-    repoUrl: "https://github.com/MohammedSiddique8998/data-mining-text-clustering",
-    stack: ["Python", "TF-IDF", "K-Means", "PCA", "Silhouette score", "Text mining"],
+      "Shows practical customer text intelligence, feature representation, unsupervised learning and visual interpretation skills.",
+    repoUrl: "https://github.com/MohammedSiddique8998/customer-feedback-theme-discovery",
+    stack: ["Python", "TF-IDF", "K-Means", "PCA", "Silhouette score", "Text analytics"],
     metrics: [
       ["K=4", "selected clusters"],
       ["0.2111", "silhouette"],
@@ -144,7 +169,7 @@ const projects = [
     bars: [84, 80, 76],
   },
   {
-    title: "Bio-Inspired Multi-Armed Bandit RL",
+    title: "Adaptive Decision Optimization Engine",
     type: "Reinforcement Learning",
     category: "ml",
     summary:
@@ -159,7 +184,7 @@ const projects = [
       "UCB c=2 produced the strongest final-window average reward in the generated 5-arm, 10-arm and 20-arm experiments.",
     impact:
       "Builds foundational reinforcement-learning knowledge relevant to optimisation and decision-intelligence work.",
-    repoUrl: "https://github.com/MohammedSiddique8998/bio-inspired-multi-armed-bandit-rl",
+    repoUrl: "https://github.com/MohammedSiddique8998/adaptive-decision-optimization-engine",
     stack: ["Python", "Reinforcement Learning", "Epsilon-greedy", "UCB", "Simulation"],
     metrics: [
       ["500", "runs per setting"],
