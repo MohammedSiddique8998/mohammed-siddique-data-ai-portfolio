@@ -271,12 +271,25 @@ window.addEventListener("load", () => {
   setTimeout(() => loader?.classList.add("is-done"), 420);
 });
 
+function setMenuOpen(open) {
+  nav.classList.toggle("open", open);
+  menuToggle?.setAttribute("aria-expanded", String(open));
+  menuToggle?.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+}
+
 menuToggle?.addEventListener("click", () => {
-  nav.classList.toggle("open");
+  setMenuOpen(!nav.classList.contains("open"));
 });
 
 document.querySelectorAll(".nav a").forEach((link) => {
-  link.addEventListener("click", () => nav.classList.remove("open"));
+  link.addEventListener("click", () => setMenuOpen(false));
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && nav.classList.contains("open")) {
+    setMenuOpen(false);
+    menuToggle?.focus();
+  }
 });
 
 document.querySelectorAll("a[download]").forEach((link) => {
@@ -329,10 +342,17 @@ function replayMotion() {
   setTimeout(() => motionPortal?.classList.remove("is-active"), 1200);
 }
 
+const themeNames = { cyber: "Cyber", consultant: "Consultant", engineer: "Engineer" };
+const themeLabel = document.querySelector("#themeLabel");
+
 function setTheme(theme) {
   root.dataset.theme = theme;
   localStorage.setItem("portfolio-theme", theme);
+  const name = themeNames[theme] || theme;
+  const nextName = themeNames[themes[(themes.indexOf(theme) + 1) % themes.length]];
+  if (themeLabel) themeLabel.textContent = name;
   themeToggle?.setAttribute("title", `Theme: ${theme}. Click to switch.`);
+  themeToggle?.setAttribute("aria-label", `Visual theme: ${name}. Switch to ${nextName}.`);
   drawSkillChart();
 }
 
